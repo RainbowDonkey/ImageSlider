@@ -1,0 +1,317 @@
+.main-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-image: linear-gradient(to top, rgb(182, 165, 189), #9da7b3 );
+}
+
+.body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    user-select: none;
+    background-image: linear-gradient(to top, #9B59B6, #283747 );
+    border-radius: 4px;
+
+    -webkit-box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+    -moz-box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+    box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+}
+
+.slider_container{
+    position: relative;
+    width: 80%;
+}
+
+.main-header{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+/* Dummy nav */
+.nav_container{
+    margin: 0px;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #9B59B6;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+/* Dummy nav */
+
+/* Image section */
+.image_section{
+    position: relative;
+    height: 280px;
+}
+
+/* Image view*/
+.image_view_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    -webkit-scroll-snap-points-x: repeat(100%);
+      -ms-scroll-snap-points-x: repeat(100%);
+          scroll-snap-points-x: repeat(100%);
+  -webkit-scroll-snap-type: mandatory;
+      -ms-scroll-snap-type: mandatory;
+          scroll-snap-type: mandatory;
+}
+
+.test{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    display: flex;
+
+    -webkit-transition:all 1.0s ease-in-out;
+    -moz-transition:all 1.0s ease-in-out;
+    -o-transition:all 1.0s ease-in-out;
+    transition:all 1.0s ease-in-out;
+}
+
+.image_view{
+    width: 100%;
+    height: 100%;
+    /*height: 280px;*/
+    object-fit: cover;
+    display: block;
+
+    flex-shrink: 0;
+}
+/* Image view */
+
+/* Image view trigger */
+.image_click_navigation_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.left{
+    /*background-color: rgba(0, 0, 255, 0.247);*/
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+}
+
+.right{
+    /*background-color: rgba(255, 0, 0, 0.274);*/
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+}
+/* Image view trigger */
+
+/* Buttons container*/
+.button_body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.button_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.button_container_inner{
+    position: absolute;
+    width: 100%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+/* Buttons container*/
+
+/* Navigation buttons*/
+.button{
+    position: relative;
+    border: 5px solid lightgrey;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    pointer-events:all;
+    outline: none;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+    background-color: darkgray;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.button_image{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 450px) {
+    .button_container_inner {
+        height: 100%;
+    }
+
+    .button{
+        border: none;
+        border-radius: 0px;
+        height: 100%;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background-color: rgba(169, 169, 169, 0.144);
+    }
+}
+/* Navigation buttons*/
+
+/* Tooltip */
+.tooltip {
+    pointer-events: all;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* Tooltip */
+/* Image section */
+
+/* Info section */
+.info_section{
+    background-color: whitesmoke;
+}
+
+/* Indicator */
+.indicator_container{
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.205);
+    text-align:center;
+}
+
+.indicator {
+    text-align: center;
+    margin: 5px;
+    outline: none;
+    border-radius: 25px;
+    color: darkgray;
+    background-color: transparent;
+    border: 1px solid darkgray;
+}
+
+.indicator:active {
+    color: black;
+    background-color: #d1c1ce;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.selected{
+    color: black;
+    background-color: white;
+    border: 1px solid darkgray;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+/* Indicator */
+
+/* Description */
+.description_container{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+
+.description{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+/* Description */
+/* Info section */
