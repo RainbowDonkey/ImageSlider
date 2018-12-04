@@ -1,3 +1,14 @@
+.info_section{
+    background-color: whitesmoke;
+}
+
+/* Indicator */
+.indicator_container{
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.205);
+    text-align:center;
+}
+
 .indicator {
     text-align: center;
     margin: 5px;
@@ -5,14 +16,12 @@
     border-radius: 25px;
     color: darkgray;
     background-color: transparent;
-    /*border: none;*/
     border: 1px solid darkgray;
 }
 
 .indicator:active {
     color: black;
     background-color: #d1c1ce;
-    /*border: 1px solid darkgray;*/
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
@@ -26,3 +35,20 @@
     -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+/* Indicator */
+
+/* Description */
+.description_container{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+
+.description{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+/* Description */

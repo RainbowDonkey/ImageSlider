@@ -1,0 +1,15 @@
+.body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    user-select: none;
+    background-image: linear-gradient(to top, #9B59B6, #283747 );
+    border-radius: 4px;
+}
+
+.slider_container{
+    position: relative;
+    width: 80%;
+}
