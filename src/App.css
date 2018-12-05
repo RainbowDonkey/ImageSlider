@@ -1,0 +1,22 @@
+.main-container{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(182, 165, 189), #9da7b3 );
+}
+
+.body{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  user-select: none;
+  background-image: linear-gradient(to top, #9B59B6, #283747 );
+  border-radius: 4px;
+
+  -webkit-box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+  -moz-box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+  box-shadow: 5px 5px 21px 0px rgba(71,71,71,1);
+}
