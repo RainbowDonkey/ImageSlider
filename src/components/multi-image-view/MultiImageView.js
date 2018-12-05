@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import "./MultiImageView.css";
 
 function MultiImageView(props){
@@ -30,7 +30,6 @@ function calculateWidth(count){
 
 function calculateLeftOffset(selectedIndex){
     var leftOffset = - selectedIndex * 100;
-    //document.getElementById("slider").style.left = leftOffset + "%";
     return leftOffset + "%";
 }
 

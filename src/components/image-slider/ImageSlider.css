@@ -10,20 +10,6 @@
     height: 280px;
 }
 
-/*.image_click_navigation_container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}*/
-
 .info_section{
     background-color: whitesmoke;
-}
-
-.indicator_container{
-    width: 100%;
-    background-color: rgba(211, 211, 211, 0.205);
-    text-align:center;
 }

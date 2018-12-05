@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ImageIndexIndicator.css";
+import "./ImageIndexIndicatorItem.css";
 
 const ITEM_ARRAY_OFFSET = 1;
 

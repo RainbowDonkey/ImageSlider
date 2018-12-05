@@ -3,13 +3,13 @@ import "./ImageSlider.css";
 
 // Component imports
 import MultiImageView from "../multi-image-view/MultiImageView";
-import ImageIndexIndicator from "../image-index-indicator/ImageIndexIndicator";
 import ImageDescription from "../image-description/ImageDescription";
 // Component imports
 
 // Sections
-import ImageNavAreaSection from "./image-nav-area-section/ImageNavAreaSection";
+import ImageNavAreaSection from "../../components/image-slider/image-nav-area-section/ImageNavAreaSection";
 import ImageNavButtonSection from "./image-nav-button-section/ImageNavButtonSection";
+import ImageIndexIndicator from "../../components/image-slider/image-index-indicator-section/ImageIndexIndicator";
 // Sections
 
 const ITEM_ARRAY_OFFSET = 1;
@@ -37,40 +37,18 @@ class ImageSlider extends Component{
     // Compositional component - section
     createImageSection(){
         return (React.createElement("div", {className:"image_section"},
-            // Multi-Image-View
             React.createElement(MultiImageView, {items: this.getLoadedItems(), index: this.getSelectedItemIndex()}),
-            // Image-View-Nav-Area
             React.createElement(ImageNavAreaSection, {previous: () => this.previous(), next: () => this.next()}),
-            // Image-View-Nav-Button
-            React.createElement(ImageNavButtonSection, {previous: () => this.previous(), next: () => this.next()})
+            React.createElement(ImageNavButtonSection, {previousDesc: this.getPreviousItem().description, previous: () => this.previous(), nextDesc: this.getNextItem().description, next: () => this.next()})
         ));
     }
 
     // Compositional component - section
     createInfoSection(){
         return (React.createElement("div", {className:"info_section"},
-            // Image-Index-Indicator
-            this.createImageIndexIndicator(),
-            // Image-Description
+            React.createElement(ImageIndexIndicator, {index: this.getSelectedItemIndex(),count: this.getItemCount(), seek: i => this.seek(i)}),
             React.createElement(ImageDescription, {description:this.getCurrentItem().description})
         ));
-    }
-
-    createImageIndexIndicator(){
-        var rows = [];
-        for (var i = 0; i < this.getItemCount(); i++) {
-            rows.push(
-                React.createElement(
-                    ImageIndexIndicator, 
-                    {
-                        selectedIndex:this.getSelectedItemIndex(),
-                        indicatorIndex:i,
-                        seek: i => this.seek(i)
-                    }
-                )
-            );
-        }
-        return React.createElement("div", {className:"indicator_container"}, rows);
     }
 
     // General
@@ -88,6 +66,14 @@ class ImageSlider extends Component{
 
     getCurrentItem(){
         return this.getLoadedItems()[this.getSelectedItemIndex()];
+    }
+
+    getPreviousItem(){
+        return this.getLoadedItems()[this.getPreviousIndex()];
+    }
+
+    getNextItem(){
+        return this.getLoadedItems()[this.getNextItemIndex()];
     }
 
     seek(i){
