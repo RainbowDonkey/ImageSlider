@@ -24,3 +24,9 @@
     transform: translate(-50%,-50%);
     pointer-events: none;
 }
+
+.button_tooltip_wrapper{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
