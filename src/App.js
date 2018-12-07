@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from "./components/nav-bar/Navbar";
 import Header from "./components/header/Header";
 import ImageSlider from "./components/image-slider/ImageSlider";
+import FullPageLoader from "./components/full-page-loader/FullPageLoader";
 // Component imports
 
 class App extends Component {
@@ -94,7 +95,7 @@ class App extends Component {
   }
 
   createPlaceholder(){
-    return (React.createElement("div", null, "Placeholder"));
+    return (React.createElement(FullPageLoader, null));
   }
   
 }

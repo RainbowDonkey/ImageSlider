@@ -24,9 +24,8 @@ function createRightNavigationButton(props){
 
 function createBtn(text, direction, icon, alt, click){
     return (
-        React.createElement("div", null,
+        React.createElement("div", {className:"button " + direction},
             React.createElement(ImageNavButton, {direction:direction, img:icon, alt: alt, onClick: click, tooltip: React.createElement(Tooltip, {text:text})}),
-            //React.createElement(Tooltip, {text:text})
         )
     );
 }
