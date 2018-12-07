@@ -12,12 +12,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-        items : this.getItems()
+        items : null //this.getItems()
     };
   }
 
+  componentWillMount() {
+    this.renderData();
+  }
+
   // TODO: hook up to backend
-  getItems(){
+  /*getItems(){
     return [
         {
             'id':'1',
@@ -45,7 +49,25 @@ class App extends Component {
             'description':'Sea'
         }
     ];
-}
+  }*/
+
+  renderData(){
+    fetch('https://jsonplaceholder.typicode.com/photos?_limit=5')
+        .then(this.checkReponse)
+        .then(response => response.json())
+        .then(data => data.map(item => ({ id:item.id, photo: item.url, description: item.title })))
+        .then(data => this.setState({items: data}))
+        .catch(error => console.log("An error occurred: " + error));
+  }
+
+  checkReponse(response){
+    if(response.ok){
+      return Promise.resolve(response);
+    }
+    else{
+      return Promise.reject(new Error(response.statusText));
+    }
+  }
 
   render() {
     return (
@@ -57,10 +79,22 @@ class App extends Component {
   }
 
   createBody(){
-    return React.createElement("div", {className:"body"}, 
-      React.createElement(Header, {name: "BNRY"}),
-      React.createElement(ImageSlider, {items:this.state.items})
+    return (
+      this.state.items ? this.createContent() : this.createPlaceholder()
     );
+  }
+
+  createContent(){
+    return (
+      React.createElement("div", {className:"body"}, 
+        React.createElement(Header, {name: "BNRY"}),
+        React.createElement(ImageSlider, {items:this.state.items})
+      )
+    );
+  }
+
+  createPlaceholder(){
+    return (React.createElement("div", null, "Placeholder"));
   }
   
 }

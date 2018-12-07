@@ -9,9 +9,9 @@ function ImageIndexIndicator(props){
             React.createElement(
                 ImageIndexIndicatorItem, 
                 {
+                    key:i,
                     selectedIndex:props.index,
                     indicatorIndex:i,
-                    //seek: i => this.seek(i)
                     seek: props.seek
                 }
             )
